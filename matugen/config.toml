@@ -1,0 +1,13 @@
+[config.wallpaper]
+# Whether to set the wallpaper or not
+set = false
+command = "swww"
+
+[templates.hyprland]
+input_path = '~/.config/matugen/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors/colors.conf'
+
+
+[templates.kitty]
+input_path = '~/.config/matugen/kitty-colors.conf'
+output_path = '~/.config/kitty/colors/colors.conf'
