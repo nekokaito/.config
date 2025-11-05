@@ -29,6 +29,7 @@ tooltip label {
   border-radius: 50px;
   margin: 3px 5px 0px 5px;
   transition: width 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
+  opacity: 0.8;
 }
 
 #workspaces button {
@@ -36,8 +37,10 @@ tooltip label {
   background-color: @background;
   color: @on_surface;
   border-radius: 10px;
-  margin: 3px 2px 0px 2px;
+  margin: 3px 2px 0px 4px;
+  opacity: 0.8;
 }
+
 #workspaces button.active {
   background-color: @on_primary_container;
   color: @background;
