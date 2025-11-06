@@ -10,6 +10,13 @@ window#waybar {
   background: transparent;
   color: @on_surface;
 }
+#window {
+  padding: 0 10px;
+  color: @on_surface;
+  border-radius: 30px;
+  margin: 3px 5px 0px 5px;
+  opacity: 0.8;
+}
 
 tooltip {
   background: @background;
@@ -22,7 +29,8 @@ tooltip label {
 
 #clock,
 #pulseaudio,
-#network {
+#network,
+#taskbar {
   padding: 12px;
   background-color: @background;
   color: @on_surface;
@@ -31,13 +39,28 @@ tooltip label {
   transition: width 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
   opacity: 0.8;
 }
+#taskbar button {
+  background: @surface_variant;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 4px;
+  border-radius: 100%;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#taskbar button.active {
+  background-color: @on_primary_container;
+}
 
 #workspaces button {
-  padding: 11px;
+  padding: 14px;
   background-color: @background;
   color: @on_surface;
   border-radius: 10px;
   margin: 3px 2px 0px 4px;
+  opacity: 0.8;
+  transition: width 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
   opacity: 0.8;
 }
 
@@ -51,6 +74,30 @@ tooltip label {
 #network:hover {
   background-color: @on_primary_container;
   color: @background;
+}
+
+#pulseaudio-slider {
+  padding: 0;
+  margin: 0;
+}
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 80px;
+  border-radius: 5px;
+  background: black;
+}
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background: @on_primary_container;
 }
 
 #workspaces button:hover {

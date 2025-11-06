@@ -1,15 +1,16 @@
 {
   "layer": "top",
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["hyprland/window"],
-  "modules-right": ["pulseaudio", "network", "clock"],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["wlr/taskbar", "pulseaudio", "network"],
   "clock": {
-    "format-alt": "{:%a, %d. %b  %H:%M}"
+    "format": "{:%a, %d %b. %I:%M %p}"
   },
 
   "hyprland/window": {
     "format": "{initialTitle}",
     "max-length": 30,
+    "icon": "{icon}",
     "separate-outputs": true,
     "ellipsis": "…"
   },
@@ -30,11 +31,11 @@
       "car": "",
       "default": ["", ""]
     },
+    "tooltip-format": "{volume}%\n{icon}\n{slider}",
     "scroll-step": 1,
     "on-click": "pavucontrol",
     "ignored-sinks": ["Easy Effects Sink"]
   },
-
   "network": {
     "interface": "enp34s0",
     "format": "{ifname}",
@@ -46,5 +47,21 @@
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 16,
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["Alacritty"],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    },
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal"
+    }
   }
 }
